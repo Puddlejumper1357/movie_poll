@@ -1,0 +1,12 @@
+
+<h1>Welcome to MovietoV</h1>
+
+{% if data %}
+    <ul>
+    {% for movie in data %}
+        <ul><p>{{movie.Movie_Title }}</p></ul>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No movies are available to vote on.</p>
+{% endif %}
