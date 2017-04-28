@@ -1,10 +1,20 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/myStyle.css' %}" />
 
 <h1>Welcome to MovietoV</h1>
 
 {% if data %}
     <ul>
     {% for movie in data %}
-        <ul><p>{{movie.Movie_Title }}</p></ul>
+        <ul>
+            <img src= {{movie.image.url}}>
+                <p>
+                    {{movie.Movie_Title }}
+                </p>
+            </img>
+
+        </ul>
     {% endfor %}
     </ul>
 {% else %}

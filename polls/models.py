@@ -6,7 +6,7 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 
 class Movies(models.Model):
     Movie_Title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='polls/static/MovieImg')#may need to modify some stuff about this but for now just leavc
+    image = models.ImageField(upload_to='MovieImg', blank=True)
     Total_Number_of_Stars=models.IntegerField(default=0)
     Total_Number_of_Votes=models.IntegerField(default=0)
     pub_date = models.DateTimeField('date published')
