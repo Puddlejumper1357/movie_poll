@@ -8,16 +8,31 @@
     <ul>
     {% for movie in data %}
         <ul>
-                <h3>
-                    {{movie.Movie_Title }}
-                </h3>
-                
-                
-                <p> 
-                    <img src= {{movie.image.url}}></img>
-                    average:
-                </p>
-
+            <div>
+                <table style="width: 50%">
+                    <tr rowspan="2">
+                        <th> <h2>{{movie.Movie_Title }}</h2></th>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                       <th rowspan="2"><img class=movieIMG src= {{movie.image.url}}></img></th> 
+                        <td> <img src="/polls/Images/5s.JPG"></img></td>
+                        <td> <img src="/polls/Images/5s.JPG"></img></td>
+                       <tr>
+                       <td>avg:  </td>
+                       <td>
+                           <form>
+                                <input type="range" min="1" max="5" value="0" onchange="slider(this)">
+                                <button type="button" onclick= "myButton(this)">
+                                    Vote!
+                                </button>
+                            </form>
+                       </td>
+                       </tr>
+                    </tr>
+                </table>
+            </div>
         </ul>
     {% endfor %}
     </ul>
