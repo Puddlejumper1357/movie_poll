@@ -17,14 +17,14 @@
                     </tr>
                     <tr>
                        <th rowspan="2"><img class=movieIMG src= {{movie.image.url}}></img></th> 
-                        <td> <img src="/polls/Images/5s.JPG"></img></td>
-                        <td> <img src="/polls/Images/5s.JPG"></img></td>
+                        <td> <img class=stars src="{% static 'polls/Images/5s.JPG' %}"></img></td>
+                        <td> <img class=stars src="{% static 'polls/Images/5s.JPG' %}"></img></td>
                        <tr>
-                       <td>avg:  </td>
+                       <td>avg: {{movie.avg}} </td>
                        <td>
                            <form>
-                                <input type="range" min="1" max="5" value="0" onchange="slider(this)">
-                                <button type="button" onclick= "myButton(this)">
+                                <input name=myvote type="range" min="1" max="5" value="0" onchange="slider(this)">
+                                <button type="button" onclick="myButton(this)">
                                     Vote!
                                 </button>
                             </form>

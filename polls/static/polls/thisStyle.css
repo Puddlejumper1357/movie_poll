@@ -1,17 +1,26 @@
 #stars{
     display: inline-block;
-    width: auto;
+    border-radius: 4px;
+    padding: 5px;
 }
+.stars{
+    width: 150px;
+    height: auto;
+}
+    
+
 #movieIMG {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
     width: 150px;
 }
+
 .movieIMG{
     width: 140px; 
     height: auto;
 }
+
 table, th, td{
     /*border: 1px solid black;*/
     border-collapse: collapse;
