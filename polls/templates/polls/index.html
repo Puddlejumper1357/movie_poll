@@ -1,6 +1,6 @@
 {% load staticfiles %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/myStyle.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/thisStyle.css' %}" />
 
 <h1>Welcome to MovietoV</h1>
 
@@ -8,10 +8,11 @@
     <ul>
     {% for movie in data %}
         <ul>
-            <img src= {{movie.image.url}}>
-                <p>
+                <h3>
                     {{movie.Movie_Title }}
-                </p>
+                </h3>
+                
+                <img src= {{movie.image.url}}>
             </img>
 
         </ul>
