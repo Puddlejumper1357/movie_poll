@@ -1,6 +1,6 @@
 {% load staticfiles %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/thisStyle.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/myStyle.css' %}" />
 <script src="{% static 'polls/thisScript.js' %}" type="text/javascript"></script>
 
 <h1>Welcome to MovietoV</h1>
@@ -9,7 +9,6 @@
     <ul>
     {% for movie in data %}
         <ul>
-            
             <div>
                 <table style="width: 50%">
                     <tr rowspan="2">
@@ -19,23 +18,16 @@
                     </tr>
                     <tr>
                        <th rowspan="2"><img class=movieIMG src= {{movie.image.url}}></img></th> 
-                        
-                        
                         <td> <img id="avrage{{movie.Movie_Title}}" class=stars src=/static/polls/Images/{{movie.avg}}s.JPG onerror="this.src='/static/polls/Images/0s.JPG'"></img></td>
-                        
-                       
-                        
-                       
-                       
+
                         <td> <img id="votes{{movie.Movie_Title}}" class=stars src="{% static 'polls/Images/1s.JPG' %}"></img></td>
                        <tr>
                        <td>avg: {{movie.avg}} </td>
                        <td>
-                           <form>
-                                <input name="myvote" related-image-id="votes{{movie.Movie_Title}}" type="range" min="1" max="5" value="0" oninput="mySlider(this)">
-                                <button type="button" onclick="myButton(this)">
-                                    Vote!
-                                </button>
+                           <form  action="{% url 'polls:vote' movie.id %}" method="post">{% csrf_token %}
+                           
+                                <input  name="myvote" related-image-id="votes{{movie.Movie_Title}}" type="range" min="1" max="5" value="0" oninput="mySlider(this)">
+                                <input type="submit" value="Vote!"/>
                             </form>
                        </td>
                        </tr>
